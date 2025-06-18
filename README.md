@@ -57,7 +57,7 @@ When adding data to your MongoDB collection, use this format:
 
 ### 1. Clone the Repository
 ```
-git clone [<your-repo-url>](https://github.com/Ash1327/Assignment.git)
+git clone https://github.com/Ash1327/Assignment.git
 ```
 
 ### 2. Install Dependencies
