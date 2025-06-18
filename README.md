@@ -34,6 +34,19 @@ Full_Stack_Assignment/
   package-lock.json
   README.md
 ```
+## Project Timeline
+Here is a timeline for completing this assignment:
+
+| Step                                 | Description                                      | Estimated Time |
+|-------------------------------------- |--------------------------------------------------|:--------------:|
+| 1. Project Setup                     | Initialize Node.js project, install dependencies  |   15 min       |
+| 2. Backend: API & MongoDB            | Create Express server, connect to MongoDB,        |
+|                                      | implement GET/PUT endpoints                      |   30 min       |
+| 3. Frontend: HTML/CSS/JS             | Build fetch and update pages, connect to backend  |   30 min       |
+| 4. Styling & Validation              | Add Bootstrap, custom CSS, form validation        |   15 min       |
+| 5. Testing & Debugging               | Test all endpoints and UI, fix bugs               |   15 min       |
+| 6. Documentation & Polish            | Write README, add screenshots, clean code         |   15 min       |
+| **Total**                            |                                                  | **~2 hours**   |
 
 ---
 
