@@ -87,6 +87,10 @@ node server.js
 ## Screenshots
 ![image](https://github.com/user-attachments/assets/18eeb60b-82c1-4fcc-99e8-f98f07ae6641)
 ![image](https://github.com/user-attachments/assets/a2a3335f-ca4f-47ab-8bd4-c4932d3ed374)
+![image](https://github.com/user-attachments/assets/68f9112f-cf9d-4b14-9712-d2394facc480)
+![image](https://github.com/user-attachments/assets/c1d96a53-839c-4781-888a-761a7bb1f72a)
+
+
 
 
 ---
