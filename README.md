@@ -57,8 +57,7 @@ When adding data to your MongoDB collection, use this format:
 
 ### 1. Clone the Repository
 ```
-git clone <your-repo-url>
-cd Full_Stack_Assignment
+git clone [<your-repo-url>](https://github.com/Ash1327/Assignment.git)
 ```
 
 ### 2. Install Dependencies
@@ -86,7 +85,9 @@ node server.js
 ---
 
 ## Screenshots
-> Add screenshots of the UI here (fetch and update pages, success/error states)
+![image](https://github.com/user-attachments/assets/18eeb60b-82c1-4fcc-99e8-f98f07ae6641)
+![image](https://github.com/user-attachments/assets/a2a3335f-ca4f-47ab-8bd4-c4932d3ed374)
+
 
 ---
 
