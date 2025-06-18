@@ -1,4 +1,4 @@
-# Full Stack Assignment
+# Assignment
 
 ## Overview
 This project demonstrates a full-stack application with a RESTful backend (Node.js, Express, MongoDB) and a modern, user-friendly frontend (HTML, Bootstrap, JavaScript). It fulfills the requirements of the assignment by providing endpoints to fetch and update configuration data stored in MongoDB.
