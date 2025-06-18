@@ -16,7 +16,10 @@ This project demonstrates a full-stack application with a RESTful backend (Node.
 - **Ready for React**: You can easily swap the frontend for React if desired
 
 ---
+## Demo Video
 
+https://drive.google.com/file/d/19rVevMrnKZyM9zAhrPdPamkEskiHmmSz/view?usp=sharing
+---
 ## Folder Structure
 ```
 Full_Stack_Assignment/
