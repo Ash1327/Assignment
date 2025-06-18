@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Remark</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="update.css">
+</head>
+<body>
+  <div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card p-5 fade-in w-100" style="max-width: 480px;">
+      <h1 class="mb-4 text-center fw-bold">Update Remark</h1>
+      <!-- Config ID Input -->
+      <div class="mb-3">
+        <label for="configId" class="form-label">Config To Update (configId):</label>
+        <input type="text" id="configId" class="form-control" placeholder="Enter configId" />
+      </div>
+      <!-- Remark Textarea -->
+      <div class="mb-3">
+        <label for="remark" class="form-label">Remark</label>
+        <textarea id="remark" class="form-control" placeholder="Enter remark"></textarea>
+      </div>
+      <button class="btn btn-primary w-100 mb-3" onclick="updateRemark()">Submit</button>
+      <!-- Loading Spinner -->
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border text-primary" id="loadingSpinner" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <!-- Response/Error Display -->
+      <div id="response" class="mt-3"></div>
+      <p class="mt-4 text-muted small text-center">Click the "Submit" button - the configId and remark will be <strong>PUT</strong> on <code>http://localhost:8080/api/configurations/{id}</code> and the remark field gets updated for the provided configId.</p>
+      <div class="mt-4 text-center">
+        <button class="btn btn-secondary" onclick="window.location.href='/fetch.html'">
+          Back to Fetch Config Page
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Update remark for a configuration
+    async function updateRemark() {
+      const id = document.getElementById('configId').value.trim();
+      const remark = document.getElementById('remark').value.trim();
+      const responseDiv = document.getElementById('response');
+      const spinner = document.getElementById('loadingSpinner');
+      responseDiv.innerHTML = '';
+      // Validation
+      if (!id) {
+        responseDiv.innerHTML = '<div class="alert alert-danger animate__animated animate__shakeX">Please enter a configId.</div>';
+        return;
+      }
+      if (!remark) {
+        responseDiv.innerHTML = '<div class="alert alert-danger animate__animated animate__shakeX">Please enter a remark.</div>';
+        return;
+      }
+      spinner.style.display = 'inline-block';
+      try {
+        const response = await fetch(`http://localhost:8080/api/configurations/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ remark }),
+        });
+        spinner.style.display = 'none';
+        const data = await response.json();
+        if (!response.ok) {
+          responseDiv.innerHTML = `<div class="alert alert-danger animate__animated animate__shakeX">Error: ${data.error || 'Failed to update configuration'}</div>`;
+          return;
+        }
+        responseDiv.innerHTML = `<div class="alert alert-success animate__animated animate__fadeInDown"><strong>PUT:</strong> <code>http://localhost:8080/api/configurations/${id}</code><br>${data.message}</div>`;
+      } catch (error) {
+        spinner.style.display = 'none';
+        responseDiv.innerHTML = '<div class="alert alert-danger animate__animated animate__shakeX">Error: Unable to connect to server</div>';
+      }
+      spinner.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
